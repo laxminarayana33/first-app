@@ -11,12 +11,12 @@
             <li class="list-items"> <a class="list-link" href="">About </a> </li>
             <li class="list-items"> <a class="list-link" href=""> Gallery </a></li>
             <li class="list-items"> <a class="list-link" href=""> Login / Signup </a></li>
-            <li class="list-items">
+            <!-- <li class="list-items">
               <a class="list-link" routerLink="cart"><i class="bi bi-cart-fill"></i><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-cart-fill" viewBox="0 0 16 16">
                 <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
               </svg></a>
               <span class="badge badge-warning" ng-init="0"> 0 </span>
-            </li>
+            </li> -->
           </ul>
         </div>
       </div>
@@ -25,19 +25,37 @@
   <br>
   <div class="body">
     <section>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>S.No</th>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Qunatity</th>
+            <th>Action</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <!-- <td></td>
+            <td>{{cart.imageUrl}}</td>
+            <td>{{cart.name}}</td>
+            <td>{{cart.qunatity}}</td>
+            <td><button class="btn btn-danger"></button></td>
+            <td>{{cart.total}}</td> -->
+          </tr>
+        </tbody>
+      </table>
         <div class="row main-row">
-          <div class="search">
-            <input class="form-control" type="text" name="iname" [(ngModel)]="iname" (ngModelChange)="search()" placeholder="Search Here">
-            <button class="btn btn-success">Search</button>
-          </div>
-          <div class="col-md-6 main-col" *ngFor = "let item of items">
+          <div class="col-md-6 main-col" *ngFor = "let cart of carts">
             <div class="row item-row">
               <div class="col-md-6">
-              <img [src]="item.imageUrl" alt="Book Image">
+              <img [src]="cart.imageUrl" alt="Book Image">
             </div>
             <div class="col-md-6">
-             <h3> {{item.iname}}</h3>
-             <h5> &#8377; {{item.price}} &nbsp;
+             <h3> {{cart.iname}}</h3>
+             <h5> &#8377; {{cart.price}} &nbsp;
               &nbsp;
             <i class="bi bi-heart-fill" ng-style= "{'fill': clicked ==true ? 'red'; 'black'}">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="bi bi-heart-fill" viewBox="0 0 16 16">
@@ -45,9 +63,7 @@
                 </svg>
               </i>
             </h5>
-             <p>{{item.desc}} </p>
-
-             <button class="btn btn-success" (click)="addItem()"> Add to Cart</button>
+             <p>{{cart.desc}} </p>
              <button class="btn btn-danger"> Buy Now</button>
             </div>
             </div>
