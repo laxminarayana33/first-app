@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
   items = [
     {
       iname: 'Abraham Lincoln',
-      imageUrl: 'assets/images/abraham_lincon.jpeg',
+      imageUrl: 'assets/images/abraham.jpeg',
       price: 200,
       desc: 'Abraham Lincoln was an American lawyer and statesman who served as the 16th president of the United States from 1861 until his assassination in 1865.',
     },
