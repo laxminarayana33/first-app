@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 // import { NgModel } from '@angular/forms';
 import itemData from '../data.json'
+import { ServiceService } from '../service.service';
 
 @Component({
   selector: 'app-home',
@@ -9,9 +10,42 @@ import itemData from '../data.json'
 })
 
 export class HomeComponent {
-  constructor() {}
 
-  items:{iname:String, price:Number, desc:String, imageUrl:String}[] = itemData;
+  public itemsData: any;
+  constructor( private service: ServiceService) {}
+  
+  ngOnInit(){
+    this.service.getItem().subscribe(res=>{
+      // console.log(res)
+      this.itemsData = res;
+    })
+
+  }
+
+  cart:any[] = [];
+  addItem(item: { iname: any; imageUrl: any; price: any; desc: any; }) {
+    this.cart.push([item.iname, item.imageUrl, item.price, item.desc]);
+    // console.log(this.cart);
+  }
+
+iname: any;
+  search() {
+    if (this.iname !== '') {
+      this.itemsData = this.itemsData.filter((res: { iname: string; }) => {
+        return res.iname.toLowerCase().match(this.iname.toLowerCase());
+      });
+    }
+  }
+
+
+}
+
+
+
+
+
+
+  // items:{iname:String, price:Number, desc:String, imageUrl:String}[] = itemData;
 
   // items = [
   //   {
@@ -100,21 +134,4 @@ export class HomeComponent {
   //   },
   // ];
 
-  cart:any[] = [];
-  addItem(item: { iname: any; imageUrl: any; price: any; desc: any; }) {
-    this.cart.push([item.iname, item.imageUrl, item.price, item.desc]);
-    // console.log(this.cart);
-  }
-
-  iname: any;
-  search() {
-    if (this.iname !== '') {
-      this.items = this.items.filter((res) => {
-        return res.iname.toLowerCase().match(this.iname.toLowerCase());
-      });
-    }
-  }
-
-
-
-}
+  

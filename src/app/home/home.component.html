@@ -27,10 +27,11 @@
     <section>
         <div class="row main-row">
           <div class="search">
-            <input class="form-control" type="text" name="iname" [(ngModel)]="iname" (ngModelChange)="search()" placeholder="Search Here">
-            <button class="btn btn-success">Search</button>
+     
+            <input class="form-control" type="text" name="iname"  [(ngModel)]="iname" (ngModelChange)="search()" placeholder="Search Here">
+            <!-- <button class="btn btn-success">Search</button> -->
           </div>
-          <div class="col-md-6 main-col" *ngFor = "let item of items">
+          <div class="col-md-6 main-col" *ngFor = "let item of itemsData">
             <div class="row item-row">
               <div class="col-md-6">
               <img [src]="item.imageUrl" alt="Book Image">
