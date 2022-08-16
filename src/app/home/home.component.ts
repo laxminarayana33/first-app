@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 // import { NgModel } from '@angular/forms';
 import itemData from '../data.json'
-import { ServiceService } from '../service.service';
+import { CartService } from '../Services/cart.service';
+import { ServiceService } from '../Services/service.service';
 
 @Component({
   selector: 'app-home',
@@ -12,19 +13,21 @@ import { ServiceService } from '../service.service';
 export class HomeComponent {
 
   public itemsData: any;
-  constructor( private service: ServiceService) {}
+  constructor( private service: ServiceService, private cartservice:CartService) {}
   
+ public totalItems:number=0;
   ngOnInit(){
     this.service.getItem().subscribe(res=>{
       // console.log(res)
       this.itemsData = res;
     })
-
+    this.cartservice.getItems().subscribe(res=>{
+      this.totalItems = res.length
+    }) 
   }
 
-  cart:any[] = [];
-  addItem(item: { iname: any; imageUrl: any; price: any; desc: any; }) {
-    this.cart.push([item.iname, item.imageUrl, item.price, item.desc]);
+  addItem(item: any) {
+    this.cartservice.addCart(item);
     // console.log(this.cart);
   }
 
@@ -36,8 +39,7 @@ iname: any;
       });
     }
   }
-
-
+  
 }
 
 

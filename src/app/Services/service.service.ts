@@ -10,7 +10,9 @@ export class ServiceService {
   constructor(private http: HttpClient) { }
  
   getItem(){
-    return this.http.get<any>('http://localhost:4200/assets/data.json')
+  return this.http.get<any>('http://localhost:4200/assets/data.json');
+//     localStorage.setItem('Data', JSON.stringify(data));
+// console.log(localStorage.getItem('Data'))
   }
 }
 
