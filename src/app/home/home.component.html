@@ -47,7 +47,7 @@
             </h5>
              <p>{{item.desc}} </p>
 
-             <button class="btn btn-success" (click)="addItem()"> Add to Cart</button>
+             <button class="btn btn-success" (click)="addItem(item)"> Add to Cart</button>
              <button class="btn btn-danger"> Buy Now</button>
             </div>
             </div>
@@ -56,3 +56,5 @@
     </section>
   </div>
 </div>
+
+<!-- <app-cart [carts]="cart"></app-cart> -->
