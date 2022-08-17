@@ -2,15 +2,19 @@
   <div class="header">
     <div class="row">
       <div class="col-md-4 logo-part">
-        <img class="logo" src="assets/images/logo.png" alt="logo">
+        <img class="logo" src="assets/images/logo.png" alt="logo" />
       </div>
       <div class="col-md-8 menu-part">
         <div class="menu">
           <ul class="menu_list">
-            <li class="list-items"> <a class="list-link" href=""> Home </a></li>
-            <li class="list-items"> <a class="list-link" href="">About </a> </li>
-            <li class="list-items"> <a class="list-link" href=""> Gallery </a></li>
-            <li class="list-items"> <a class="list-link" href=""> Login / Signup </a></li>
+            <li class="list-items"><a class="list-link" href=""> Home </a></li>
+            <li class="list-items"><a class="list-link" href="">About </a></li>
+            <li class="list-items">
+              <a class="list-link" href=""> Gallery </a>
+            </li>
+            <li class="list-items">
+              <a class="list-link" href=""> Login / Signup </a>
+            </li>
             <!-- <li class="list-items">
               <a class="list-link" routerLink="cart"><i class="bi bi-cart-fill"></i><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-cart-fill" viewBox="0 0 16 16">
                 <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
@@ -22,40 +26,66 @@
       </div>
     </div>
   </div>
-  <br>
-  <div class="body">
-    <section>
-      <table class="table">
-        <thead>
-          <tr>
-            <th>S.No</th>
-            <th>Image</th>
-            <th>Name</th>
-            <th>Qunatity</th>
-            <th>Action</th>
-            <th>Price</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr  *ngFor = "let cart of carts; let index = index">
-            <td>{{index+1}}</td>
-            <td><img class="cart-img" src="{{cart.imageUrl}}" alt=""></td>
-            <td>{{cart.iname}}</td>
-            <td>{{cart.qunatity}}</td>
-            <td><button class="btn btn-danger" (click)="remove(cart)">X</button></td>
-            <td>{{cart.price}}</td>
-          </tr>
-          <tr>
-            <td>Total Price</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>{{gTotal}}</td>
-          </tr>
-        </tbody>
-      </table>
-        <!-- <div class="row main-row">
+  <br />
+</div>
+<div class="cart-container">
+  <section class="cart-menu" *ngIf="carts.length != 0">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>S.No</th>
+          <th>Image</th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Qunatity</th>
+          <th>Total Price</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let cart of carts; let index = index">
+          <td>{{ index + 1 }}</td>
+          <td><img class="cart-img" src="{{ cart.imageUrl }}" alt="" /></td>
+          <td>{{ cart.iname }}</td>
+          <td>{{ cart.price }}</td>
+          <td>
+            <button class="btn btn-danger">+</button> &nbsp;
+            {{ cart.quantity }} &nbsp;
+            <button class="btn btn-danger">-</button>
+          </td>
+          <td>{{ cart.total }}</td>
+          <td>
+            <button class="btn btn-danger" (click)="remove(cart)">
+              <i class="bi bi-trash"></i
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-trash"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"
+                />
+                <path
+                  fill-rule="evenodd"
+                  d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"
+                />
+              </svg>
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="4"></td>
+          <td><strong> Total Price </strong></td>
+          <td>
+            <strong> {{ gTotal }} </strong>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- <div class="row main-row">
           <div class="col-md-6 main-col">
             <div class="row item-row">
               <div class="col-md-6">
@@ -77,6 +107,16 @@
             </div>
           </div>
         </div> -->
-    </section>
-  </div>
+  </section>
+  <section *ngIf="carts.length == 0">
+    <div class="cart-empty">
+      <img
+        class="cart-empt"
+        src="assets/images/cart-empty.png"
+        alt="cart-empty"
+      />
+      <h3>Your cart is Empty</h3>
+      <button class="btn btn-primary" routerLink="">Shop Now</button>
+    </div>
+  </section>
 </div>

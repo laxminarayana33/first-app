@@ -38,3 +38,21 @@
 .cart-img{
   height: 50px;
 }
+.table{
+  border: 0.5px solid;
+  text-align: center;
+}
+.cart-menu{
+  margin:1% 5%
+}
+.cart-empt{
+  width: 40%;
+  margin: 5px;
+}
+.cart-empty{
+  text-align: center;
+}
+.cart-container{
+  margin: 5px
+  ;
+}

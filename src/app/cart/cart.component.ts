@@ -15,12 +15,10 @@ export class CartComponent implements OnInit {
   constructor(private cartservice:CartService) { }
 
   ngOnInit() {
-    this.cartservice.getItems().subscribe(res=>{
+    this.cartservice.getItems().subscribe((res)=>{
       this.carts = res;
       this.gTotal = this.cartservice.total();
     })
-    
- 
   }
 
   remove(cart:any){
