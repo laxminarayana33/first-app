@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 // import { NgModel } from '@angular/forms';
 import itemData from '../data.json'
 import { CartService } from '../Services/cart.service';
@@ -13,7 +14,7 @@ import { ServiceService } from '../Services/service.service';
 export class HomeComponent {
 
   public itemsData: any;
-  constructor( private service: ServiceService, private cartservice:CartService) {}
+  constructor( private service: ServiceService, private cartservice:CartService, private router:Router) {}
   
  public totalItems:number=0;
   ngOnInit(){
@@ -33,6 +34,11 @@ export class HomeComponent {
   addItem(item: any) {
     this.cartservice.addCart(item);
     // console.log(this.cart);
+  }
+
+  logout(){
+
+    this.router.navigate(['login'])
   }
 
 iname: any;

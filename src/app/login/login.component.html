@@ -1,0 +1,31 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <img class="login-img" src="assets/images/login.png" alt="Login image">
+        </div>
+        <div class="col-md-6"> 
+             <div class="card login">
+            <h4>Log In</h4>
+            <form [formGroup]="loginForm" novalidate (ngSubmit)="onSubmit()">
+              <!-- <div class="row"> -->
+              <div class="mb-2 input">
+                  <label for="username">User Name/E-mail</label>
+                  <input type="text" class="form-control" formControlName = "username" placeholder="Enter Your User Name or E-mail" required>
+                  <!-- <span *ngIf="loginForm.username.touched && !loginForm.username.invalid"> Pleas Enter User Name</span> -->
+              </div>
+              <div class="mb-2 input">
+                  <label for="password">Password</label>
+                  <input type="password" class="form-control" formControlName="password" placeholder="Enter your Password" required>
+                  <!-- <span *ngIf="form.passowrd.touched && !form.password.invalid"> Enter your password</span> -->
+              </div>
+      
+                  <button class="btn btn-primary" type="submit">Log In</button>
+                <p>Don't have account click here to <strong routerLink=""> Sign Up </strong></p>
+            
+            <!-- </div> -->
+            </form>
+          </div></div>
+    </div>
+  
+  </div>

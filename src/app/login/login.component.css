@@ -1,0 +1,48 @@
+/* .container{
+    background-image: url("src/assets/images/loginbg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+} */
+.card{
+    width: 500px;
+    padding: 2%;
+    border: none;
+    margin: 2%;
+    background:linear-gradient(to right,#4b8bffbd, #912ced9c);
+    border-radius: 4%;
+ }
+ .form-control{
+     border-radius: 10px;
+     background-color: #ffffffa6;
+ }
+ label{
+     color: white;
+     font-weight: 500;
+     font-family: 'Times New Roman', Times, serif;
+     padding-left: 2%;
+ }
+ h4,h5,p{
+     text-align: center;
+     color: white;
+     font-family: 'Times New Roman', Times, serif;
+ }
+ .login{
+    margin-top: 7%;
+ }
+
+ .row{
+    margin-top: 2%;
+    background-color: beige;
+ }
+ strong{
+    color: #1409c9;
+    cursor: pointer;
+    text-decoration: underline;
+ }
+ .login-img{
+    padding-left:4%;
+ }
+ .btn{
+    background-color: #9445f0;
+    border-color: #9445f0;
+ }

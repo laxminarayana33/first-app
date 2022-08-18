@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { TitleStrategy } from '@angular/router';
 import { CartService } from '../Services/cart.service';
 
 @Component({
@@ -10,6 +11,7 @@ export class CartComponent implements OnInit {
 
   public carts:any[] = [];
   public gTotal!: number ;
+  public quantity:number = 1;
 
 
   constructor(private cartservice:CartService) { }
@@ -20,12 +22,19 @@ export class CartComponent implements OnInit {
       this.gTotal = this.cartservice.total();
     })
   }
-
   remove(cart:any){
     this.cartservice.removeItem(cart);
   }
-  
-  
+  emptycart(){
+    this.cartservice.removeAll();
+  }
 
-
+  inc(){
+   this.quantity++;
+  }
+  dec(){
+    if(this.quantity>1){
+      this.quantity--;
+    }
+  }
 }

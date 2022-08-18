@@ -1,0 +1,38 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    },
+    {
+      "firstname": "laxmi",
+      "lastname": "narayana",
+      "email": "laxminarayan@gmail.com",
+      "phonenumber": 9951665857,
+      "dob": "1997-09-07",
+      "hno": "1-14",
+      "street": "gandhi nagar",
+      "city": "sididpet",
+      "state": "telangana",
+      "username": "laxminarayan",
+      "password": "narayana",
+      "confirmpassword": "narayana",
+      "id": 2
+    },
+    {
+      "firstname": "narayana",
+      "lastname": "kota",
+      "email": "nani@gmail.com",
+      "phonenumber": 9988776655,
+      "hno": "h.no 14-106, ganghi nagar, siddipet, telangana",
+      "street": "",
+      "city": "",
+      "state": "",
+      "username": "nani",
+      "password": "nani",
+      "confirmpassword": "",
+      "id": 3
+    }
+  ]
+}

@@ -7,7 +7,7 @@
       <div class="col-md-8 menu-part">
         <div class="menu">
           <ul class="menu_list">
-            <li class="list-items"><a class="list-link" href=""> Home </a></li>
+            <li class="list-items"><a class="list-link" routerLink="/home"> Home </a></li>
             <li class="list-items"><a class="list-link" href="">About </a></li>
             <li class="list-items">
               <a class="list-link" href=""> Gallery </a>
@@ -49,11 +49,11 @@
           <td>{{ cart.iname }}</td>
           <td>{{ cart.price }}</td>
           <td>
-            <button class="btn btn-danger">+</button> &nbsp;
-            {{ cart.quantity }} &nbsp;
-            <button class="btn btn-danger">-</button>
+            <button class="btn btn-danger" (click)="inc()">+</button> &nbsp;
+            {{quantity }} &nbsp;
+            <button class="btn btn-danger" (click)="dec()">-</button>
           </td>
-          <td>{{ cart.total }}</td>
+          <td>{{ cart.total * quantity }}</td>
           <td>
             <button class="btn btn-danger" (click)="remove(cart)">
               <i class="bi bi-trash"></i
@@ -77,14 +77,17 @@
           </td>
         </tr>
         <tr>
-          <td colspan="4"></td>
-          <td><strong> Total Price </strong></td>
+          <td colspan="3"></td>
+          <td><button class="btn btn-primary" routerLink="/home"> Shop More</button></td>
+          <td><button class="btn btn-danger" (click)="emptycart()" >Empty Cart</button></td>
           <td>
-            <strong> {{ gTotal }} </strong>
+            <strong>Total Price {{ gTotal * quantity }} </strong>
           </td>
+          <td> <button class="btn btn-success" routerLink="/payment"> Buy</button> </td>
         </tr>
       </tbody>
     </table>
+
     <!-- <div class="row main-row">
           <div class="col-md-6 main-col">
             <div class="row item-row">
@@ -116,7 +119,7 @@
         alt="cart-empty"
       />
       <h3>Your cart is Empty</h3>
-      <button class="btn btn-primary" routerLink="">Shop Now</button>
+      <button class="btn btn-primary" routerLink="/home">Shop Now</button>
     </div>
   </section>
 </div>

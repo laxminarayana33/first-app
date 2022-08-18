@@ -1,0 +1,43 @@
+.container-fluid{
+    background-image: url("src/assets/images/signupdesktop.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.welcome-mssg{
+    margin-top: 35%;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+}
+
+.card{
+   width: 500px;
+   padding: 2%;
+   border: none;
+   margin: 2%;
+   margin-left: 10%;
+   background:linear-gradient(to right, #4b8bffbd, #912ced9c);
+   border-radius: 4%;
+}
+.form-control{
+    border-radius: 10px;
+    background-color: #ffffffa6;
+}
+label{
+    color: white;
+    font-weight: 500;
+    padding-left: 2%;
+}
+h4,h5,p{
+    text-align: center;
+    color: white;
+}
+.welcm-text{
+    color: black;
+    margin: 25px;
+    text-align: justify;
+}
+strong{
+    color: #1409c9;
+    cursor: pointer;
+    text-decoration: underline;
+ }

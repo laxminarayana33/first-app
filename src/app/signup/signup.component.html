@@ -1,0 +1,76 @@
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card signup">
+        <h4>Sign Up</h4>
+        <p>Register yourself here...!</p>
+        <form [formGroup]="signUpForm" novalidate (ngSubmit)="onSubmit()">
+          <!-- <div class="row"> -->
+            <div class="mb-2 input">
+              <label> User Name</label>
+              <input class="form-control" type="text" formControlName="username"  placeholder="Enter Your User Name">
+            </div>
+          <div class="mb-2 input">
+            <label> First Name</label>
+            <input class="form-control" type="text" formControlName="firstname"  placeholder="Enter Your First Name">
+          </div>
+          <div class="mb-2 input">
+            <label> Last Name</label>
+            <input class="form-control" type="text" formControlName="lastname" placeholder="Enter Your Last Name">
+          </div>
+          <div class="mb-2 input">
+            <label> E-mail</label>
+            <input class="form-control" type="email" formControlName="email" placeholder="Enter Your E-mail">
+          </div>
+          <div class=" mb-2 input">
+            <label> Phone Number</label>
+            <input class="form-control" type="number" formControlName="phonenumber" placeholder="Enter Your Phone Number">
+          </div>
+          <!-- <div class="mb-2 input">
+            <label> Date of Birth</label>
+            <input class="form-control" type="date" formControlName="dob" placeholder="Enter Your Date of Birth">
+          </div> -->
+          <!-- <h5> Address</h5> -->
+          <div class=" mb-2 input">
+            <label> Address</label>
+            <input class="form-control" type="text" formControlName="hno" placeholder="Enter Your Address">
+          </div>
+          <!-- <div class=" mb-2 input">
+            <label>Street / Road No</label>
+            <input class="form-control" type="text" formControlName="street" placeholder="Enter Your Street or Road Number">
+          </div>
+          <div class=" mb-2 input">
+            <label> City</label>
+            <input class="form-control" type="text" formControlName="city" placeholder="Enter Your City">
+          </div>
+          <div class=" mb-2 input">
+            <label> State</label>
+            <input class="form-control" type="text" formControlName="state" placeholder="Enter Your state">
+          </div> -->
+         
+          <div class=" mb-2 input">
+            <label> Password</label>
+            <input class="form-control" type="password" formControlName="password" placeholder="Enter Your Password">
+          </div>
+          <!-- <div class=" mb-2 input">
+            <label>Confirm Password</label>
+            <input class="form-control" type="password" formControlName="confirmpassword" placeholder="Enter Your Confirm Password">
+          </div> -->
+              <button class="btn btn-danger" type="submit">Sign Up</button>
+            <p>already have account click here to <strong routerLink="login"> login </strong></p>
+        
+        <!-- </div> -->
+        </form>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="welcome-mssg">
+        <h3>Welcome To</h3>
+        <h1>Book World</h1>
+        <p class="welcm-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta tenetur ut sint fugit? Saepe nobis delectus at perferendis, praesentium qui magni necessitatibus illum cum explicabo. Obcaecati esse perferendis voluptatem pariatur.</p>
+      </div>
+    </div>
+  </div>
+ 
+</div>

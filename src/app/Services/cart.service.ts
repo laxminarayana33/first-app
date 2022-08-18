@@ -7,10 +7,10 @@ import { BehaviorSubject } from 'rxjs';
 export class CartService {
 
   constructor() { }
-  public cart:any = [];
+  // public cart:any = [];
   public carts :any = [] ;
   public itemsData = new BehaviorSubject<any>([])
-
+  public cartItems = JSON.parse(localStorage.getItem('carts')||'{}');
   // localStorage.setItem('cart', JSON.stringify([]));
 
   getItems(){
@@ -31,6 +31,7 @@ export class CartService {
     JSON.parse(localStorage.getItem('carts')||'{}');
     // console.log(this.carts);
   }
+
   total():number{
     let total = 0;
     this.carts.map((a:any)=>{
@@ -38,7 +39,6 @@ export class CartService {
     })
     return total;
   }
-
   removeItem(item:any){
     this.carts.map((i:any, index:any)=>{
       if(item.id === i.id){
@@ -49,5 +49,15 @@ export class CartService {
   }
   removeAll(){
     this.carts = [];
+    this.itemsData.next(this.carts)
   }
+
+  // increase(item:any){
+  //   this.carts.map((i:any)=>{
+  //     if(item.quantity === i.quantity){
+  //       this.carts.quantity+1;
+  //     }
+  //   })
+  // }
+ 
 }
