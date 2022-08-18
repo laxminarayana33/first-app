@@ -7,17 +7,17 @@ import { BehaviorSubject } from 'rxjs';
 export class CartService {
 
   constructor() { }
-  // public cart:any = [];
+
   public carts :any = [] ;
   public itemsData = new BehaviorSubject<any>([])
-  public cartItems = JSON.parse(localStorage.getItem('carts')||'{}');
   // localStorage.setItem('cart', JSON.stringify([]));
 
   getItems(){
     // return JSON.parse(localStorage.getItem('cart')||'{}');
     return this.itemsData.asObservable()
   }
-  
+  getCartItems(){}
+
   setItem(item:any){
     this.carts.push(item);
     this.itemsData.next((item));
@@ -28,8 +28,6 @@ export class CartService {
     this.itemsData.next(this.carts);
     this.total();
     localStorage.setItem('carts', JSON.stringify(this.carts));
-    JSON.parse(localStorage.getItem('carts')||'{}');
-    // console.log(this.carts);
   }
 
   total():number{
@@ -59,5 +57,5 @@ export class CartService {
   //     }
   //   })
   // }
- 
+
 }

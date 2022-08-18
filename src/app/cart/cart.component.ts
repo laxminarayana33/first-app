@@ -21,6 +21,11 @@ export class CartComponent implements OnInit {
       this.carts = res;
       this.gTotal = this.cartservice.total();
     })
+    // this.carts = JSON.parse(localStorage.getItem('carts')!)
+
+    // this.cartservice.getCartItems();
+
+
   }
   remove(cart:any){
     this.cartservice.removeItem(cart);
