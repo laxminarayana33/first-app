@@ -1,0 +1,72 @@
+<app-indicator></app-indicator>
+<div class="card" style="margin: 20px;">
+    <div class="row">
+        <div class="col-md-7">  
+            <div class="card" style="margin: 7px;">
+                <button class="btn detbtn btn-secondary" (click)="details()">customer details</button>
+                <hr>
+                <div *ngIf="custdetails" >
+                    <form class="details" [formGroup]="simpleForm" (ngSubmit)="onsubmit()" >
+                    <div class="row form-row">
+                    <input type="text" class="form-control" formControlName="firstname" placeholder="First Name">
+                    <input type="text" class="form-control" formControlName="lastname" placeholder="Last Name">
+                    <input type="email" class="form-control" formControlName="email" placeholder="E-mail">
+                     </div> 
+                      <div class="row form-row">
+                        <button class="btn next btn-success" type="submit">next</button>
+                      </div>
+                </form>
+                </div>
+            </div>
+            <div class="card" style="margin: 7px;" >
+                <button class="btn shipbtn btn-secondary"  (click)="address()">Shipping Address</button>
+                <hr>
+                <div *ngIf="custaddress" >
+                    <form class="details" [formGroup]="addressForm" (ngSubmit)="submitAddress()" >
+                        <div class="row form-row">
+                            <label class="scndlabel"> Full Name:  <input type="text"  formControlName="fullname"  class="form-control2"  placeholder="Full Name">
+                            </label> 
+                            <label class="scndlabel"> Phone Number:    <input type="number"  formControlName="phonenumber"  class="form-control2"  placeholder="Mobile Number">
+                            </label>
+                             <label class="scndlabel"> H.No or Flat No :  <input type="text"  formControlName="doorno"  class="form-control2"  placeholder="H.No or Flat No">
+                            </label>   
+                            <label class="scndlabel"> Street Name:    <input type="text"   formControlName="street"  class="form-control2"  placeholder="Street Name">
+                            </label> 
+                            <label class="scndlabel"> City Name:    <input type="text"  formControlName="city"  class="form-control2"  placeholder="City Name">
+                            </label> 
+                            <label class="scndlabel"> State Name:    <input type="text"  formControlName="state"  class="form-control2"  placeholder="State">
+                            </label> 
+                            <label class="scndlabel"> Pin Code:    <input type="number"  formControlName="pincode"  class="form-control2"  placeholder="pincode">
+                            </label> 
+                         </div> 
+                      <div class="row form-row">
+                        <button class="btn ship btn-success"   type="submit">Ship To this Address</button>
+                      </div>
+                </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-5">
+             <div class="card cart" *ngFor="let cart of carts;">
+                  <div class="row img">
+                    <div class="col-md-3"> 
+                        <img class="cart-img" src="{{ cart.imageUrl }}" alt="" />
+                    </div>
+                    <div class="col-md-9">
+                        <h3 class="cart-name">{{ cart.iname }}</h3> <br>
+                        <p class="cart-price">Price: {{ cart.price}}</p>
+                    </div>
+                  
+                    
+                  </div>  
+                  <p class="qntbtn"> 
+                     <button class="btn btn-inc btn-danger" (click)="inc()">+</button> &nbsp;
+                    {{quantity }} &nbsp;
+                    <button class="btn btn-dec btn-danger" (click)="dec()">-</button>
+                </p>
+                  <strong>Total Price {{ gTotal * quantity}} </strong> 
+             </div> 
+        </div>
+    </div>
+</div>
+

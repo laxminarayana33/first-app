@@ -10,7 +10,9 @@ import { CartComponent } from './cart/cart.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SignUpComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
-import { PaymentComponent } from './payment/payment.component'
+import { PaymentComponent } from './payment/payment.component';
+import { ShippingComponent } from './shipping/shipping.component';
+import { IndicatorComponent } from './indicator/indicator.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +21,9 @@ import { PaymentComponent } from './payment/payment.component'
     CartComponent,
     SignUpComponent,
     LoginComponent,
-    PaymentComponent
+    PaymentComponent,
+    ShippingComponent,
+    IndicatorComponent
   ],
   imports: [
     BrowserModule,

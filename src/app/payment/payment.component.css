@@ -1,0 +1,74 @@
+
+.account{
+    margin: 2%;
+}
+.inner-row{
+   margin-left: 5%; 
+   margin-top: 2%;
+}
+.or{
+    width: auto;
+    margin-top: 10%;
+}
+.login{
+    width: 58%;
+    height: 250px;
+}
+.guest{
+    width: 30%;
+}
+.gst-btn{
+    margin-top:50%
+}
+.form{
+    margin: 2%;
+}
+.input{
+    margin: 5px;
+}
+.lgin-btn{
+    width: 93%;
+    margin: 10px;
+}
+.cart{
+    margin: 5px;
+}
+.form-control{
+    border-radius: 10px;
+    background-color: #ffffffa6;
+}
+strong{
+   text-align: center;
+   font-size: medium;
+   font-weight: 500;
+}
+.card{
+    font-family: 'Times New Roman', Times, serif;
+}
+.cart-img{
+    width: 100px;
+    margin: 10px;
+}
+.img{
+margin: 5px; 
+display: flex;
+flex-direction: row;
+}
+.cart-name{
+    /* margin: 10px; */
+    padding-left: 50px;
+    margin-top:30px;
+}
+.btn-inc{
+    width:30px
+}
+.btn-dec{
+    width:30px
+}
+.qntbtn{
+    text-align: center;
+}
+.cart-price{
+    margin-left: 50px;
+    margin-top: -20px;
+}
