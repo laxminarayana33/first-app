@@ -1,0 +1,43 @@
+<app-indicator></app-indicator>
+<div class="modeofpay" >
+    <div class="row">
+        <div class="col-md-6">
+            <div class="mode form-check">
+                <select  class="form-select" name="mode" id="">
+                    <option value="default">Select any payment method</option>
+                    <option value="card" (change)="pay(1)" >Debit card</option>
+                    <option value="banking" (change)="pay(2)">Net banking</option>
+                    <option value="upi" (change)="pay(3)">UPI</option>
+                    <option value="cash" (change)="pay(4)">Cash</option>
+                </select>
+            </div>
+            <div class="method">
+                <div *ngIf="show == 1"> this is card payment</div>
+                <div *ngIf="show == 2"> this is banking payment</div>
+                <div *ngIf="show == 3"> this is upi payment</div>
+                <div *ngIf="show == 4"> this is cash payment</div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card cart" *ngFor="let cart of carts;">
+                <div class="row img">
+                  <div class="col-md-3"> 
+                      <img class="cart-img" src="{{ cart.imageUrl }}" alt="" />
+                  </div>
+                  <div class="col-md-9">
+                      <h3 class="cart-name">{{ cart.iname }}</h3> <br>
+                      <p class="cart-price">Price: {{ cart.price}}</p>
+                  </div>
+                
+                  
+                </div>  
+                <!-- <p class="qntbtn"> 
+                   <button class="btn btn-inc btn-danger" (click)="inc()">+</button> &nbsp;
+                  {{quantity }} &nbsp;
+                  <button class="btn btn-dec btn-danger" (click)="dec()">-</button>
+              </p> -->
+                <strong>Total Price {{ gTotal}} </strong> 
+           </div> 
+        </div>
+    </div>
+</div>

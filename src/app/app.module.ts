@@ -12,7 +12,8 @@ import { SignUpComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
 import { PaymentComponent } from './payment/payment.component';
 import { ShippingComponent } from './shipping/shipping.component';
-import { IndicatorComponent } from './indicator/indicator.component'
+import { IndicatorComponent } from './indicator/indicator.component';
+import { CheckoutComponent } from './checkout/checkout.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +24,8 @@ import { IndicatorComponent } from './indicator/indicator.component'
     LoginComponent,
     PaymentComponent,
     ShippingComponent,
-    IndicatorComponent
+    IndicatorComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,
