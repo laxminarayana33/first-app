@@ -1,7 +1,41 @@
+.header{
+  background: aliceblue;
+}
+
+
 .logo{
   text-align: center;
 }
 img{
   width: 50%;
   margin: 10px;
+}
+.search{
+  margin-top: 10%;
+}
+.menu_list{
+  display: flex;
+  flex-direction: row;
+  margin-top: 6%;
+}
+.list-items{
+  list-style-type: none;
+    text-decoration: none;
+    padding-left: 7%;
+}
+.list-link{
+  text-decoration: none;
+  font-size: 25px;
+  color: #0b13b5;
+}
+
+.badge {
+  border-radius: 20px;
+  opacity: 0.7;
+  z-index: 999;
+  color: red;
+  margin-left: -10px;
+  margin-top: -10px;
+  position: absolute;
+  background-color: aliceblue;
 }

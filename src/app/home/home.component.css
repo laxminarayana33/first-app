@@ -54,7 +54,7 @@
   z-index: 999;
   color: red;
   margin-left: -10px;
-  margin-top: -10px;
+  margin-top: 3px;
   position: absolute;
   background-color: aliceblue;
 }
@@ -69,4 +69,12 @@
 }
 .icon:visited {
   fill: red;
+}
+.btn-floating{
+  position: fixed;
+  right: 2px;
+  top: 31%;
+  height: 9%;
+  width: 5%;
+  border-radius: 30%;
 }

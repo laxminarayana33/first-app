@@ -14,7 +14,8 @@ import { PaymentComponent } from './payment/payment.component';
 import { ShippingComponent } from './shipping/shipping.component';
 import { IndicatorComponent } from './indicator/indicator.component';
 import { CheckoutComponent } from './checkout/checkout.component';
-import { HeaderComponent } from './header/header.component'
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +28,8 @@ import { HeaderComponent } from './header/header.component'
     ShippingComponent,
     IndicatorComponent,
     CheckoutComponent,
-    HeaderComponent
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
