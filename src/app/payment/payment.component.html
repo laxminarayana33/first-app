@@ -1,7 +1,7 @@
 <app-indicator></app-indicator>
 <div class="card" style="margin: 20px;">
     <div class="row">
-        <div class="col-md-7">  
+        <div class="col-md-7">
             <div class="account">
             <h3>Already have an account ?</h3>
             <div class="row inner-row">
@@ -13,7 +13,7 @@
                         <div class="mb-2 input">
                             <input type="password" class="form-control" formControlName="password" placeholder="Enter your Password" required>
                         </div>
-                
+
                         <div class="input">
                             <input type="checkbox"  name="rember"> Remember me
                         </div>
@@ -32,23 +32,23 @@
         <div class="col-md-5">
              <div class="card cart" *ngFor="let cart of carts;">
                   <div class="row img">
-                    <div class="col-md-3"> 
+                    <div class="col-md-3">
                         <img class="cart-img" src="{{ cart.imageUrl }}" alt="" />
                     </div>
                     <div class="col-md-9">
                         <h3 class="cart-name">{{ cart.iname }}</h3> <br>
                         <p class="cart-price">Price: {{ cart.price}}</p>
                     </div>
-                  
-                    
-                  </div>  
-                  <p class="qntbtn"> 
+
+
+                  </div>
+                  <p class="qntbtn">
                      <button class="btn btn-inc btn-danger" (click)="inc()">+</button> &nbsp;
                     {{quantity }} &nbsp;
                     <button class="btn btn-dec btn-danger" (click)="dec()">-</button>
                 </p>
-                  <strong>Total Price {{ gTotal * quantity}} </strong> 
-             </div> 
+             </div>
+             <strong>Total Price {{ gTotal * quantity}} </strong>
         </div>
     </div>
 </div>

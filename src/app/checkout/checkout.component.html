@@ -2,7 +2,68 @@
 <div class="modeofpay" >
     <div class="row">
         <div class="col-md-6">
-            <div class="mode form-check">
+          <div class="type">
+            <h2 style="text-align: center;">Select Your Payment Type</h2>
+          </div>
+          <div class="pay">
+            <button class="btn paybtn btn-primary" (click)="card()">1)  Debit Card or Credit Card
+              <img style="width: 55px; margin-left:28%;" src="assets/images/debit.png" alt="">
+              <img style="width: 55px; margin-left: 2px;" src="assets/images/debit1.png" alt="">
+              <img style="width: 65px; margin-left: 2px;" src="assets/images/debit2.jpg" alt="">
+            </button>
+            <div class="paybody" *ngIf="paycard">
+              <input type="text" class="form-control cnumbr" placeholder="Enter Card Number">
+              <div class="date_pin">
+              <input type="text" class="form-control cdate" placeholder="MM/YY">
+              <input type="text" class="form-control cpin" placeholder="cvv">
+            </div>
+            <button class="btn btn-success" (click)="cardPay()" > place order</button>
+            </div>
+          </div>
+          <div class="pay">
+          <button class="btn paybtn btn-primary" (click)="banking()">2) Internet Banking</button>
+          <div class="paybody" *ngIf="paybanking">
+            <div class="banktype">
+                <input type="radio" name="bankname" id="hdfc"> &nbsp;
+                <label for="hdfc"> HDFC Bank</label>&nbsp;
+                <input type="radio" name="bankname" id="icici"> &nbsp;
+                <label for="icici"> ICICI Bank</label>&nbsp;
+                <input type="radio" name="bankname" id="andhra"> &nbsp;
+                <label for="andhra"> Andhra Bank</label>&nbsp;
+              </div>
+              <div class="banktype">
+                <input type="radio" name="bankname" id="dcb"> &nbsp;
+                <label for="dcb"> DCB Bank</label>&nbsp;
+                <input type="radio" name="bankname" id="kotak"> &nbsp;
+                <label for="kotak"> Kotak Mahendra Bank</label>&nbsp;
+                <input type="radio" name="bankname" id="baroda"> &nbsp;
+                <label for="baroda"> Bank Of Baroda</label>&nbsp;
+              </div>
+              <button class="btn btn-success" (click)="bankPay()" >Place Order</button>
+          </div>
+        </div>
+        <div class="pay">
+          <button class="btn paybtn btn-primary" (click)="upi()">3)  UPI Paypemt Service</button>
+          <div class="paybody" *ngIf="payupi">
+            <input type="radio" name="upipay" id="phonepay">&nbsp;
+            <label for="phonepay" (click)="onPhonePe()">Phone pay</label>
+            <br>
+            <input type="text" class="form-control upi-control" *ngIf="phonepe" name="upiid" placeholder="Enter Your UPI id">
+            <br>
+            <input type="radio" name="upipay" id="googlepay">&nbsp;
+            <label for="googlepay" (click)="onGooglePe()">Google pay</label>
+            <br>
+            <input type="text" class="form-control upi-control" *ngIf="googlepe" name="upiid" placeholder="Enter Your UPI id">
+            <button class="btn btn-success" (click)="upiPay()" >Place Order</button>
+          </div>
+        </div>
+        <div class="pay">
+          <button class="btn paybtn btn-primary" (click)="cash()"> 4) Cash On devlivery</button>
+          <div class="paybody" *ngIf="paycash">
+            <button class="btn btn-success" (click)="cashPay()" >Place Order</button>
+          </div>
+        </div>
+            <!-- <div class="mode form-check">
                 <select  class="form-select" name="mode" id="">
                     <option value="default">Select any payment method</option>
                     <option value="card" (change)="pay(1)" >Debit card</option>
@@ -16,28 +77,29 @@
                 <div *ngIf="show == 2"> this is banking payment</div>
                 <div *ngIf="show == 3"> this is upi payment</div>
                 <div *ngIf="show == 4"> this is cash payment</div>
-            </div>
+            </div> -->
         </div>
         <div class="col-md-6">
             <div class="card cart" *ngFor="let cart of carts;">
                 <div class="row img">
-                  <div class="col-md-3"> 
+                  <div class="col-md-3">
                       <img class="cart-img" src="{{ cart.imageUrl }}" alt="" />
                   </div>
                   <div class="col-md-9">
                       <h3 class="cart-name">{{ cart.iname }}</h3> <br>
                       <p class="cart-price">Price: {{ cart.price}}</p>
                   </div>
-                
-                  
-                </div>  
-                <!-- <p class="qntbtn"> 
+
+
+                </div>
+                <!-- <p class="qntbtn">
                    <button class="btn btn-inc btn-danger" (click)="inc()">+</button> &nbsp;
                   {{quantity }} &nbsp;
                   <button class="btn btn-dec btn-danger" (click)="dec()">-</button>
               </p> -->
-                <strong>Total Price {{ gTotal}} </strong> 
-           </div> 
+
+           </div>
+           <strong style="text-align: center;">Total Price {{ gTotal}} </strong>
         </div>
     </div>
 </div>

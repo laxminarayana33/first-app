@@ -15,7 +15,7 @@ export class HomeComponent {
 
   public itemsData: any;
   constructor( private service: ServiceService, private cartservice:CartService, private router:Router) {}
-  
+
  public totalItems:number=0;
   ngOnInit(){
     this.service.getItem().subscribe(res=>{
@@ -28,7 +28,7 @@ export class HomeComponent {
     })
     this.cartservice.getItems().subscribe((res)=>{
       this.totalItems = res.length
-    }) 
+    })
   }
 
   addItem(item: any) {
@@ -41,14 +41,7 @@ export class HomeComponent {
     this.router.navigate(['login'])
   }
 
-iname: any;
-  search() {
-    if (this.iname !== '') {
-      this.itemsData = this.itemsData.filter((res: { iname: string; }) => {
-        return res.iname.toLowerCase().match(this.iname.toLowerCase());
-      });
-    }
-  }
+
 }
 
 
@@ -145,4 +138,4 @@ iname: any;
   //   },
   // ];
 
-  
+

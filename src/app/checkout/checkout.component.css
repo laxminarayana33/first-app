@@ -8,3 +8,69 @@
     margin-right: 8%;
 
 }
+.pay{
+  margin: 5%;
+  /* text-align: center; */
+}
+.paybtn{
+  width: 100%;
+  background: white;
+  margin: 5px;
+  color: black;
+  border: white;
+  text-align: left;
+}
+
+.card{
+  font-family: 'Times New Roman', Times, serif;
+  width: 70%;
+}
+.cart-img{
+  width: 100px;
+  margin: 10px;
+}
+.img{
+margin: 5px;
+display: flex;
+flex-direction: row;
+}
+.cart-name{
+  /* margin: 10px; */
+  padding-left: 50px;
+  margin-top:30px;
+}
+.cart-price{
+  margin-left: 25%;
+}
+.paybody{
+  text-align: left;
+  margin: 10px;
+  margin-left: 5%;
+}
+.cnumbr{
+  width: 70%;
+}
+.cdate{
+  width: 20%;
+  margin: 8px 0;
+}
+.date_pin{
+  display: flex;
+  flex-direction: row;
+}
+.cpin{
+  width: 20%;
+  margin: 8px 10px;
+}
+.paybtn:hover{
+  background-color: white;
+  color: black;
+}
+.banktype{
+  text-align: center;
+    margin: 10px;
+}
+.upi-control{
+  width: 50%;
+    margin: 10px;
+}
