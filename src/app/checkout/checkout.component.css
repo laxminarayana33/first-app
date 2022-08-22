@@ -25,6 +25,10 @@
   font-family: 'Times New Roman', Times, serif;
   width: 70%;
 }
+.cart{
+  margin-top: 15px;
+  margin-left: 10%;
+}
 .cart-img{
   width: 100px;
   margin: 10px;

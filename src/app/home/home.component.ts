@@ -14,6 +14,8 @@ import { ServiceService } from '../Services/service.service';
 export class HomeComponent {
 
   public itemsData: any;
+  public items :any;
+  // public showmodal:boolean = false;
   search:string ="";
   constructor( private service: ServiceService, private cartservice:CartService, private router:Router) {}
 
@@ -25,25 +27,41 @@ export class HomeComponent {
       this.itemsData.forEach((i:any)=>{
         Object.assign(i, {quantity:1,total:i.price});
       })
-    })
+    });
     this.cartservice.getItems().subscribe((res)=>{
       this.totalItems = res.length
-    })
+    });
     this.cartservice.searchItem.subscribe((obj:any)=>{
       this.search = obj;
+    });
+    this.cartservice.getItems().subscribe((obj1)=>{
+      this.items = obj1;
     })
-  }
+  };
 
   addItem(item: any) {
     this.cartservice.addCart(item);
     // console.log(this.cart);
   }
+  addItemModel(item: any) {
+    this.cartservice.addCart(item);
+    this.router.navigate(['home'])
+  }
 
   logout(){
-
     this.router.navigate(['login'])
   }
 
+
+  showmodal = 'none'
+  showModal(item:any){
+    this.showmodal = 'block';   
+    this.cartservice.show(item);
+  }
+  close(){
+    this.showmodal = 'none';
+    // this.items=[];
+  }
 
 }
 

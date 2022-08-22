@@ -9,6 +9,7 @@ export class CartService {
   constructor() { }
 
   public carts :any = [] ;
+  public items :any = [] ;
   public itemsData = new BehaviorSubject<any>([]);
   public searchItem = new BehaviorSubject<string>("");
   // localStorage.setItem('cart', JSON.stringify([]));
@@ -51,12 +52,9 @@ export class CartService {
     this.itemsData.next(this.carts)
   }
 
-  // increase(item:any){
-  //   this.carts.map((i:any)=>{
-  //     if(item.quantity === i.quantity){
-  //       this.carts.quantity+1;
-  //     }
-  //   })
-  // }
+show(item:any){
+this.items.push(item);
+this.itemsData.next(this.items);
+}
 
 }
