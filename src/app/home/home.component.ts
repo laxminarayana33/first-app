@@ -62,6 +62,12 @@ export class HomeComponent {
     this.showmodal = 'none';
     // this.items=[];
   }
+  isClicked = false;
+  wish(){
+    this.isClicked = true;
+    // alert('this is clicked')
+  }
+
 
 }
 

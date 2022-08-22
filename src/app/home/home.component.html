@@ -13,8 +13,8 @@
              <h3> {{item.iname}}</h3>
              <h5> &#8377; {{item.price}} &nbsp;
               &nbsp;
-            <i class="bi bi-heart-fill" ng-style= "{'fill': clicked ==true ? 'red'; 'black'}">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="bi bi-heart-fill" viewBox="0 0 16 16">
+            <i class="bi bi-heart-fill" [style.fill]="isClicked? 'red' :'black' " (click)="wish()" >
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"   class="bi bi-heart-fill" viewBox="0 0 16 16">
                   <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
                 </svg>
               </i>
@@ -40,10 +40,10 @@
   </button>
 </div>
 
-<div class="modal" role="dialog" tabindex="-1" data-target="modal"   [ngStyle]="{'display':showmodal}">
+<div class="modal" role="dialog" tabindex="-1" [ngStyle]="{'display':showmodal}">
  <div class="modal-dialog" role="document">
    <div class="card"  *ngFor = "let item of items">
-    <button class="btn btn-danger modal-btn" data-dismiss="modal" (click)="close()">X</button>
+    <button class="btn btn-danger modal-btn" data-dismiss="modal">X</button>
      <div class="modal-heading">
        <img [src]="item.imageUrl" alt="Book Image">
      </div>
