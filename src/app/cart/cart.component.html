@@ -2,6 +2,9 @@
 <div class="container-fluid">
   <div class="cart-container">
     <section class="cart-menu" *ngIf="carts.length != 0">
+      <div class="cart-text">
+        <h4>Cart Items</h4>
+      </div>
       <table class="table">
         <thead>
           <tr>
@@ -21,9 +24,9 @@
             <td>{{ cart.iname }}</td>
             <td>{{ cart.price }}</td>
             <td>
-              <button class="btn btn-danger" (click)="inc()">+</button> &nbsp;
+              <button class="btn btn-danger" (click)="inc(cart)">+</button> &nbsp;
               {{ quantity }} &nbsp;
-              <button class="btn btn-danger" (click)="dec()">-</button>
+              <button class="btn btn-danger" (click)="dec(cart)">-</button>
             </td>
             <td>{{ cart.total * quantity }}</td>
             <td>
@@ -61,7 +64,7 @@
               </button>
             </td>
             <td>
-              <strong>Total Price {{ gTotal * quantity }} </strong>
+              <strong>Total Price {{ gTotal}} </strong>
             </td>
             <td>
               <button class="btn btn-success" routerLink="/payment">Buy</button>

@@ -6,7 +6,7 @@
   </div>
   <div class="col-md-4">
     <div class="search">
-      <input class="form-control" type="text" name="iname"  [(ngModel)]="iname" (ngModelChange)="search()" placeholder="Search Here">
+      <input class="form-control" type="text" name="search"  [(ngModel)]="searchText" (keyup)="search($event)" placeholder="Search Here">
     </div>
   </div>
   <div class="col-md-6">

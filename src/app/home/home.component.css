@@ -47,6 +47,7 @@
 }
 .btn {
   margin: 1%;
+  width: 45%;
 }
 .badge {
   border-radius: 20px;
@@ -77,4 +78,10 @@
   height: 9%;
   width: 5%;
   border-radius: 30%;
+}
+.item-row{
+  text-align: center;
+}
+.item-body{
+  text-align: center;
 }

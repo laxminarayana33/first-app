@@ -12,6 +12,7 @@ export class CartComponent implements OnInit {
   public carts:any[] = [];
   public gTotal!: number ;
   public quantity:number = 1;
+  cart: any;
 
 
   constructor(private cartservice:CartService) { }
@@ -34,10 +35,14 @@ export class CartComponent implements OnInit {
     this.cartservice.removeAll();
   }
 
-  inc(){
-   this.quantity++;
+  inc(item:any){
+    this.carts.map((a:any)=>{
+      if(item.name === a.name){
+        this.quantity++;
+      }
+    });   
   }
-  dec(){
+  dec(item:any){
     if(this.quantity>1){
       this.quantity--;
     }

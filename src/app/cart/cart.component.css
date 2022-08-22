@@ -43,7 +43,7 @@
   text-align: center;
 }
 .cart-menu{
-  margin:1% 5%
+  margin:10% 5%
 }
 .cart-empt{
   width: 40%;
@@ -53,6 +53,9 @@
   text-align: center;
 }
 .cart-container{
-  margin: 5px
-  ;
+  margin: 5px;
+}
+.cart-text{
+  text-align: center;
+    color: #ff0000;
 }

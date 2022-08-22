@@ -14,6 +14,7 @@ import { ServiceService } from '../Services/service.service';
 export class HomeComponent {
 
   public itemsData: any;
+  search:string ="";
   constructor( private service: ServiceService, private cartservice:CartService, private router:Router) {}
 
  public totalItems:number=0;
@@ -21,13 +22,15 @@ export class HomeComponent {
     this.service.getItem().subscribe(res=>{
       // console.log(res)
       this.itemsData = res;
-
       this.itemsData.forEach((i:any)=>{
         Object.assign(i, {quantity:1,total:i.price});
       })
     })
     this.cartservice.getItems().subscribe((res)=>{
       this.totalItems = res.length
+    })
+    this.cartservice.searchItem.subscribe((obj:any)=>{
+      this.search = obj;
     })
   }
 

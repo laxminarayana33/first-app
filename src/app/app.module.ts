@@ -15,7 +15,8 @@ import { ShippingComponent } from './shipping/shipping.component';
 import { IndicatorComponent } from './indicator/indicator.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component'
+import { FooterComponent } from './footer/footer.component';
+import { FilterPipe } from './filter.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +30,9 @@ import { FooterComponent } from './footer/footer.component'
     IndicatorComponent,
     CheckoutComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    FilterPipe,
+
   ],
   imports: [
     BrowserModule,

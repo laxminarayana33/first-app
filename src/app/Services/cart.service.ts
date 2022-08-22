@@ -9,7 +9,8 @@ export class CartService {
   constructor() { }
 
   public carts :any = [] ;
-  public itemsData = new BehaviorSubject<any>([])
+  public itemsData = new BehaviorSubject<any>([]);
+  public searchItem = new BehaviorSubject<string>("");
   // localStorage.setItem('cart', JSON.stringify([]));
 
   getItems(){
