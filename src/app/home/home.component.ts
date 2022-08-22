@@ -17,6 +17,7 @@ export class HomeComponent {
   public items :any;
   // public showmodal:boolean = false;
   search:string ="";
+  public modalData: any;
   constructor( private service: ServiceService, private cartservice:CartService, private router:Router) {}
 
  public totalItems:number=0;
@@ -34,7 +35,7 @@ export class HomeComponent {
     this.cartservice.searchItem.subscribe((obj:any)=>{
       this.search = obj;
     });
-    this.cartservice.getItems().subscribe((obj1)=>{
+    this.cartservice.modalGetItem().subscribe((obj1)=>{
       this.items = obj1;
     })
   };
@@ -43,28 +44,31 @@ export class HomeComponent {
     this.cartservice.addCart(item);
     // console.log(this.cart);
   }
-  addItemModel(item: any) {
-    this.cartservice.addCart(item);
-    this.router.navigate(['home'])
-  }
 
+  buyItem(item:any){
+    this.cartservice.addCart(item);
+    this.router.navigate(['payment']);
+  }
   logout(){
     this.router.navigate(['login'])
   }
 
-
-  showmodal = 'none'
-  showModal(item:any){
-    this.showmodal = 'block';   
-    this.cartservice.show(item);
+  showmodal = 'none';
+  openModal(item:any){
+    this.showmodal = 'block'
+    this.cartservice.show(item)
   }
   close(){
     this.showmodal = 'none';
-    // this.items=[];
+    this.cartservice.close();
   }
-  isClicked = false;
-  wish(){
+
+
+  isClicked:boolean = false;
+  wish(item:any){
     this.isClicked = true;
+    this.cartservice.wishItem(item);
+    console.log(item)
     // alert('this is clicked')
   }
 

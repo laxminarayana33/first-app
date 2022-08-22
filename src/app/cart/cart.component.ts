@@ -35,15 +35,9 @@ export class CartComponent implements OnInit {
   }
 
   inc(item:any){
-    this.carts.map((a:any)=>{
-      if(item.id === a.id){
-        this.quantity++;
-      }
-    });   
+    this.cartservice.increase(item)
   }
   dec(item:any){
-    if(this.quantity>1){
-      this.quantity--;
-    }
+this.cartservice.decrease(item)
   }
 }

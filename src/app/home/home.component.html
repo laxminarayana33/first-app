@@ -7,13 +7,13 @@
         <div class="row main-row">
           <div class="col-md-4 main-col" *ngFor = "let item of itemsData  | filter: search:'iname'">
             <div class="item-row">
-              <img [src]="item.imageUrl" alt="Book Image" style="cursor: pointer;" (click)="showModal(item)">
+              <img [src]="item.imageUrl" alt="Book Image" style="cursor: pointer;" (click)="openModal(item)" >
             </div>
             <div class="item-body">
              <h3> {{item.iname}}</h3>
              <h5> &#8377; {{item.price}} &nbsp;
               &nbsp;
-            <i class="bi bi-heart-fill" [style.fill]="isClicked? 'red' :'black' " (click)="wish()" >
+            <i class="bi bi-heart-fill"  [style.fill]="isClicked? 'red' :'black' " (click)="wish(item)" >
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"   class="bi bi-heart-fill" viewBox="0 0 16 16">
                   <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
                 </svg>
@@ -22,7 +22,7 @@
              <!-- <p>{{item.desc}} </p> -->
 
              <button class="btn btn-success" (click)="addItem(item)"> Add to Cart</button>
-             <button class="btn btn-primary"> Buy Now</button>
+             <button class="btn btn-danger" (click)="buyItem(item)"> Buy Now</button>
             </div>
           </div>
         </div>
@@ -40,7 +40,32 @@
   </button>
 </div>
 
-<div class="modal" role="dialog" tabindex="-1" [ngStyle]="{'display':showmodal}">
+
+
+
+
+<!-- <button class="btn btn-warning" >open</button> -->
+<div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':showmodal}">
+  <div class="card modal-card">
+    <button class="btn btn-danger modal-btn" (click)="close()"> X</button>
+    <div class="info"  *ngFor ="let item of items">
+      <div class="model-heading">
+        <img [src]="item.imageUrl" alt="item image">
+      </div>
+          <div class="modal-body">
+             <div class="card-body">
+               <h4>{{item.iname}}</h4>
+               <p>{{item.desc}}</p>
+               <p> &#8377;{{item.price}}</p>
+             </div>
+             <button class="btn btn-primary" (click)="addItem(item)">Add to Cart</button>
+             <button class="btn btn-warning" (click)="buyItem(item)">Buy Now</button>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- <div class="modal"   [ngStyle]="{'display':showmodal}">
  <div class="modal-dialog" role="document">
    <div class="card"  *ngFor = "let item of items">
     <button class="btn btn-danger modal-btn" data-dismiss="modal">X</button>
@@ -51,12 +76,12 @@
         <div class="modal-body">
            <h3> {{item.iname}}</h3>
            <p>{{item.desc}} </p>
-        </div> 
+        </div>
       </div>
       <button class="btn btn-success"> Add to Cart</button>
       <button class="btn btn-danger" > Buy Now</button>
     </div>
   </div>
-</div>
+</div> -->
 <!-- <app-cart [carts]="cart"></app-cart> -->
 <app-footer></app-footer>

@@ -3,7 +3,7 @@
     margin: 2%;
 }
 .inner-row{
-   margin-left: 5%; 
+   margin-left: 5%;
    margin-top: 2%;
 }
 .or{
@@ -50,7 +50,7 @@ strong{
     margin: 10px;
 }
 .img{
-margin: 5px; 
+margin: 5px;
 display: flex;
 flex-direction: row;
 }
@@ -71,4 +71,7 @@ flex-direction: row;
 .cart-price{
     margin-left: 50px;
     margin-top: -20px;
+}
+.shp-mre{
+  margin-top: 10px;
 }

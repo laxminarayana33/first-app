@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { observableToBeFn } from 'rxjs/internal/testing/TestScheduler';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,9 @@ export class CartService {
 
   public carts :any = [] ;
   public items :any = [] ;
+  public wishList :any = [] ;
   public itemsData = new BehaviorSubject<any>([]);
+  public modalData = new BehaviorSubject<any>([]);
   public searchItem = new BehaviorSubject<string>("");
   // localStorage.setItem('cart', JSON.stringify([]));
 
@@ -51,10 +54,34 @@ export class CartService {
     this.carts = [];
     this.itemsData.next(this.carts)
   }
+  modalSetItem(item:any){
+    this.items.push(item)
+    this.modalData.next((item));
+  }
+  modalGetItem(){
+   return this.modalData.asObservable()
+  }
 
-show(item:any){
-this.items.push(item);
-this.itemsData.next(this.items);
-}
+  show(item:any){
+    this.items.push(item);
+    this.modalData.next(this.items);
+// this.itemsData.next(this.items);
+  }
+  close(){
+    this.items = [];
+  }
+
+  wishItem(item:any){
+    this.wishList.push(item);
+    this.itemsData.next(this.wishList)
+  }
+
+  increase(_item:any){
+    this.carts.quantity++;
+
+  }
+  decrease(item:any){
+
+  }
 
 }

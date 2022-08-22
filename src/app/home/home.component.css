@@ -88,4 +88,25 @@
 .modal-btn{
 width: 8%;
 margin-left: 90%;
+cursor: pointer;
 }
+.modal-card{
+  width: 41%;
+  left: 30%;
+  top: 8%;
+  background: lightsteelblue;;
+  box-shadow: 0 0 40px 15px lightgrey;
+}
+.model-heading{
+  text-align: center;
+}
+.modal-body{
+  position: relative;
+  flex: 1 1 auto;
+  text-align: center;
+  padding: 1rem;
+}
+.color{
+  fill: red;
+}
+
