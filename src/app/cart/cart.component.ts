@@ -20,6 +20,7 @@ export class CartComponent implements OnInit {
     this.cartservice.getItems().subscribe((res)=>{
       this.carts = res;
       this.gTotal = this.cartservice.total();
+      // this.quantity = this.cartservice.quantity();
     })
     // this.carts = JSON.parse(localStorage.getItem('carts')!)
 
@@ -34,10 +35,13 @@ export class CartComponent implements OnInit {
     this.cartservice.removeAll();
   }
 
-  inc(item:any){
-    this.cartservice.increase(item)
+  inc(cart:any){
+    return cart.quantity++;
   }
-  dec(item:any){
-this.cartservice.decrease(item)
-  }
+
+  dec(){
+    if(this.quantity>1){
+      this.quantity--
+    }
+    }
 }

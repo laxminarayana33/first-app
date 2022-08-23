@@ -6,7 +6,7 @@ import { observableToBeFn } from 'rxjs/internal/testing/TestScheduler';
   providedIn: 'root'
 })
 export class CartService {
-
+  
   constructor() { }
 
   public carts :any = [] ;
@@ -15,18 +15,18 @@ export class CartService {
   public itemsData = new BehaviorSubject<any>([]);
   public modalData = new BehaviorSubject<any>([]);
   public searchItem = new BehaviorSubject<string>("");
-  // localStorage.setItem('cart', JSON.stringify([]));
+
 
   getItems(){
-    // return JSON.parse(localStorage.getItem('cart')||'{}');
     return this.itemsData.asObservable()
   }
-  getCartItems(){}
-
   setItem(item:any){
     this.carts.push(item);
     this.itemsData.next((item));
   }
+
+  getCartItems(){}
+
 
   addCart(item:any){
     this.carts.push(item);
@@ -42,6 +42,14 @@ export class CartService {
     })
     return total;
   }
+  // quantity(){
+  //   let quantity = 1;
+  //   this.carts.map((qnt:any)=>{
+  //     quantity +=qnt.quantity;
+  //   })
+  //   return quantity;
+  // }
+
   removeItem(item:any){
     this.carts.map((i:any, index:any)=>{
       if(item.id === i.id){
@@ -76,12 +84,13 @@ export class CartService {
     this.itemsData.next(this.wishList)
   }
 
-  increase(_item:any){
-    this.carts.quantity++;
-
+  increase(item:any){
+    item.quantity+1;
   }
   decrease(item:any){
-
+    if(item.quantity!=1){
+      item.quantity-1;
+    }
   }
 
 }

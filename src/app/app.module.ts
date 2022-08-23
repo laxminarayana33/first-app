@@ -17,6 +17,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { FilterPipe } from './filter.pipe';
+import { ConfirmComponent } from './confirm/confirm.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,6 +33,7 @@ import { FilterPipe } from './filter.pipe';
     HeaderComponent,
     FooterComponent,
     FilterPipe,
+    ConfirmComponent,
 
   ],
   imports: [

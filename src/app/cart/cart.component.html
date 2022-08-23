@@ -25,8 +25,8 @@
             <td>{{ cart.price }}</td>
             <td>
               <button class="btn btn-danger" (click)="inc(cart)">+</button> &nbsp;
-              {{ cart.quantity }} &nbsp;
-              <button class="btn btn-danger" (click)="dec(cart)">-</button>
+              {{ quantity }} &nbsp;
+              <button class="btn btn-danger" (click)="dec()">-</button>
             </td>
             <td>{{ cart.total * quantity }}</td>
             <td>

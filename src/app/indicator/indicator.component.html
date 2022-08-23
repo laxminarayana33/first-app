@@ -1,22 +1,22 @@
 
 <div class="indicator">
-    <div class="stage" *ngIf="!signedIn" [class.active] = " activestage === 1 ">
-        <div class="numbr">1</div>
+    <div class="stage" [routerLink]="['/payment']" [routerLinkActive]="['is-active']">
+        <div class="numbr" [routerLinkActive]="['number-active']">1</div>
         <label class="label"> Account</label>
     </div>
-    <div class="line"></div>
-    <div class="stage" *ngIf="!signedIn" [class.active] = " activestage === 2 ">
-        <div class="numbr">{{ signedIn ? 1 : 2}}</div>
+    <div class="line" [routerLinkActive]="['line-active']"></div>
+    <div class="stage" [routerLink]="['/shipping']" [routerLinkActive]="['is-active']">
+        <div class="numbr" [routerLinkActive]="['number-active']">{{ signedIn ? 1 : 2}}</div>
         <label class="label"> Shipping</label>
     </div>
-    <div class="line"></div>
-    <div class="stage" [class.active] = " activestage === 3 ">
-        <div class="numbr">{{ signedIn ? 2 : 3}}</div>
+    <div class="line" [routerLinkActive]="['line-active']"></div>
+    <div class="stage" [routerLink]="['/checkout']" [routerLinkActive]="['is-active']">
+        <div class="numbr" [routerLinkActive]="['number-active']">{{ signedIn ? 2 : 3}}</div>
         <label class="label"> Payment</label>
     </div>
-    <div class="line"></div>
-    <div class="stage" [class.active] = " activestage === 4 ">
-        <div class="numbr">{{ signedIn ? 3 : 4}}</div>
+    <div class="line" [routerLinkActive]="['line-active']"></div>
+    <div class="stage" [routerLink]="['/confirm']" [routerLinkActive]="['is-active']">
+        <div class="numbr" [routerLinkActive]="['number-active']">{{ signedIn ? 3 : 4}}</div>
         <label class="label"> Complete</label>
     </div>
 </div>

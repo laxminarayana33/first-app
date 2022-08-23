@@ -10,6 +10,7 @@
     margin: 2px;
     padding: 5px;
     align-items: center;
+    cursor: pointer;
 }
 .numbr{
     background: rgb(209, 221, 238);
@@ -20,6 +21,7 @@
 }
 .label{
     padding-left: 5px;
+    cursor: pointer;
 }
 .line{
     display: flex;
@@ -27,6 +29,13 @@
     width: 60px;
     margin-bottom: 15px;
 }
-.numbr.active{
-    background-color: brown;
+.is-active{
+   color: red;
+  
+}
+.number-active.numbr{
+    background: gold;
+}
+.line-active{
+    border-bottom: 1px solid rgb(218, 15, 15);
 }

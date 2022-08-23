@@ -15,6 +15,7 @@ export class HomeComponent {
 
   public itemsData: any;
   public items :any;
+  public quantity:number = 1;
   // public showmodal:boolean = false;
   search:string ="";
   public modalData: any;
@@ -63,13 +64,24 @@ export class HomeComponent {
     this.cartservice.close();
   }
 
-
   isClicked:boolean = false;
   wish(item:any){
     this.isClicked = true;
     this.cartservice.wishItem(item);
     console.log(item)
     // alert('this is clicked')
+  }
+  inc(item:any){
+    if(item){
+      this.quantity++;
+    }
+    console.log(this.quantity)
+  }
+  dec(item:any){
+    if(item.quantity>1){
+      this.quantity--;
+    }
+    console.log(this.quantity)
   }
 
 

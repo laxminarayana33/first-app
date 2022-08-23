@@ -72,23 +72,23 @@ export class CheckoutComponent implements OnInit {
   }
 
   cashPay(){
-    alert('Thanks for shopping Your order is confirmed');
-    this.router.navigate(['home']);
+    // alert('Thanks for shopping Your order is confirmed');
+    this.router.navigate(['/confirm']);
   }
   cardPay(){
-    alert('Your redirecting to bank page');
-    alert('Thanks for shopping your order is confirmed');
-    this.router.navigate(['home']);
+    // alert('Your redirecting to bank page');
+    // alert('Thanks for shopping your order is confirmed');
+    this.router.navigate(['/confirm']);
   }
   bankPay(){
-    alert('Your redirecting to Net banking page')
-    alert('Thanks for shopping Your order is confirmed');
-    this.router.navigate(['home']);
+    // alert('Your redirecting to Net banking page')
+    // alert('Thanks for shopping Your order is confirmed');
+    this.router.navigate(['/confirm']);
   }
   upiPay(){
-    alert('Your redirecting to upi app in your phone')
-    alert('Thanks for shopping Your order is confirmed');
-    this.router.navigate(['home']);
+    // alert('Your redirecting to upi app in your phone')
+    // alert('Thanks for shopping Your order is confirmed');
+    this.router.navigate(['/confirm']);
   }
 
 }

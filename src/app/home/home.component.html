@@ -19,6 +19,11 @@
                 </svg>
               </i>
             </h5>
+            <p>
+            <button class="btn incbtn btn-primary" (click)="inc(item)">+</button> &nbsp;
+            {{ item.quantity }} &nbsp;
+            <button class="btn incbtn btn-primary" (click)="dec(item)">-</button>
+          </p>
              <!-- <p>{{item.desc}} </p> -->
 
              <button class="btn btn-success" (click)="addItem(item)"> Add to Cart</button>

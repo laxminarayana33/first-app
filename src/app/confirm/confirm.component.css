@@ -1,0 +1,14 @@
+.confirm-img{
+    width: 75%;
+    margin-right: 10%;
+    margin-top: 10px;
+    margin-bottom: 12px;
+}
+.img{
+    text-align: right;
+}
+.mesg-card{
+    text-align: center;
+    margin-top: 10%;
+    /* margin-bottom: 10%; */
+}
