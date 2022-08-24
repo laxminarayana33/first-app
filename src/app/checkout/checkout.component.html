@@ -1,5 +1,6 @@
 <app-header></app-header>
 <app-indicator></app-indicator>
+<div class="container-fluid">
 <div class="modeofpay" >
     <div class="row">
         <div class="col-md-6">
@@ -8,21 +9,32 @@
           </div>
           <div class="pay">
             <button class="btn paybtn btn-primary" (click)="card()">1)  Debit Card or Credit Card
-              <img style="width: 55px; margin-left:25%;" src="assets/images/debit.png" alt="">
-              <img style="width: 55px; margin-left: 2px;" src="assets/images/debit1.png" alt="">
-              <img style="width: 65px; margin-left: 2px;" src="assets/images/debit2.jpg" alt="">
+              <img style="width: 45px; margin-left:23%;" src="assets/images/debit.png" alt="">
+              <img style="width: 45px; margin-left:2px;" src="assets/images/debit1.png" alt="">
+              <img style="width: 65px; margin-left:2px;" src="assets/images/debit2.jpg" alt="">
             </button>
             <div class="paybody" *ngIf="paycard">
-              <input type="text" class="form-control cnumbr" placeholder="Enter Card Number">
+              <input type="text" class="form-control cnumbr" placeholder="Enter Card Number"><i class="bi bi-credit-card"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-credit-card" viewBox="0 0 16 16">
+                <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1H2zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V7z"/>
+                <path d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-1z"/>
+              </svg></i>
               <div class="date_pin">
-              <input type="text" class="form-control cdate" placeholder="MM/YY">
-              <input type="text" class="form-control cpin" placeholder="cvv">
+              <input type="text" class="form-control cdate" placeholder="MM/YY"><i class="bi bi-calendar-date"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-calendar-date" viewBox="0 0 16 16">
+                <path d="M6.445 11.688V6.354h-.633A12.6 12.6 0 0 0 4.5 7.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61h.675zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82h-.684zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23z"/>
+                <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
+              </svg></i>
+              <input type="text" class="form-control cpin" placeholder="cvv"><i class="bi bi-credit-card-2-back"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-credit-card-2-back" viewBox="0 0 16 16">
+                <path d="M11 5.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1z"/>
+                <path d="M2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2zm13 2v5H1V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1zm-1 9H2a1 1 0 0 1-1-1v-1h14v1a1 1 0 0 1-1 1z"/>
+              </svg></i>
             </div>
             <button class="btn btn-success" (click)="cardPay()" > place order</button>
             </div>
           </div>
           <div class="pay">
-          <button class="btn paybtn btn-primary" (click)="banking()">2) Internet Banking</button>
+          <button class="btn paybtn btn-primary" (click)="banking()">2) Internet Banking <i class="bi bi-bank2"><svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-bank2" viewBox="0 0 16 16">
+            <path d="M8.277.084a.5.5 0 0 0-.554 0l-7.5 5A.5.5 0 0 0 .5 6h1.875v7H1.5a.5.5 0 0 0 0 1h13a.5.5 0 1 0 0-1h-.875V6H15.5a.5.5 0 0 0 .277-.916l-7.5-5zM12.375 6v7h-1.25V6h1.25zm-2.5 0v7h-1.25V6h1.25zm-2.5 0v7h-1.25V6h1.25zm-2.5 0v7h-1.25V6h1.25zM8 4a1 1 0 1 1 0-2 1 1 0 0 1 0 2zM.5 15a.5.5 0 0 0 0 1h15a.5.5 0 1 0 0-1H.5z"/>
+          </svg></i></button>
           <div class="paybody" *ngIf="paybanking">
             <div class="banktype">
                 <input type="radio" name="bankname" id="hdfc"> &nbsp;
@@ -44,7 +56,9 @@
           </div>
         </div>
         <div class="pay">
-          <button class="btn paybtn btn-primary" (click)="upi()">3)  UPI Paypemt Service</button>
+          <button class="btn paybtn btn-primary" (click)="upi()">3)  UPI Paypemt Service
+            <img class="upi-img" src="assets/images/upi.jpg" alt="upi">
+          </button>
           <div class="paybody" *ngIf="payupi">
             <input type="radio" name="upipay" id="phonepay">&nbsp;
             <label for="phonepay" (click)="onPhonePe()">Phone pay</label>
@@ -59,7 +73,9 @@
           </div>
         </div>
         <div class="pay">
-          <button class="btn paybtn btn-primary" (click)="cash()"> 4) Cash On devlivery</button>
+          <button class="btn paybtn btn-primary" (click)="cash()"> 4) Cash On devlivery <i class="bi bi-wallet2"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-wallet2" viewBox="0 0 16 16">
+            <path d="M12.136.326A1.5 1.5 0 0 1 14 1.78V3h.5A1.5 1.5 0 0 1 16 4.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 13.5v-9a1.5 1.5 0 0 1 1.432-1.499L12.136.326zM5.562 3H13V1.78a.5.5 0 0 0-.621-.484L5.562 3zM1.5 4a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-13z"/>
+          </svg></i></button>
           <div class="paybody" *ngIf="paycash">
             <button class="btn btn-success" (click)="cashPay()" >Place Order</button>
           </div>
@@ -103,5 +119,6 @@
            <strong style="text-align: center; margin-left: 10%;">Total Price {{ gTotal}} </strong>
         </div>
     </div>
+</div>
 </div>
 <app-footer></app-footer>

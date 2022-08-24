@@ -14,6 +14,7 @@ export class CartService {
   public wishList :any = [] ;
   public itemsData = new BehaviorSubject<any>([]);
   public modalData = new BehaviorSubject<any>([]);
+  public wishData = new BehaviorSubject<any>([]);
   public searchItem = new BehaviorSubject<string>("");
 
 
@@ -79,9 +80,18 @@ export class CartService {
     this.items = [];
   }
 
+  getWishItems(){
+    return this.wishData.asObservable()
+  }
+  setWishItem(item:any){
+    this.wishList.push(item);
+    this.wishData.next((item));
+  }
+
   wishItem(item:any){
     this.wishList.push(item);
-    this.itemsData.next(this.wishList)
+    this.wishData.next(this.wishList);
+    localStorage.setItem('wishes', JSON.stringify(this.wishList));
   }
 
   increase(item:any){
@@ -91,6 +101,14 @@ export class CartService {
     if(item.quantity!=1){
       item.quantity-1;
     }
+  }
+  cancel(item:any){
+    this.wishList.map((i:any, index:any)=>{
+      if(item.id === i.id){
+        this.wishList.splice(index,1);
+      }
+    });
+    this.wishData.next(this.wishList)
   }
 
 }

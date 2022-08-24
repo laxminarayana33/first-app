@@ -11,11 +11,12 @@ import { PaymentComponent } from './payment/payment.component';
 import { AuthGuard } from './Services/auth.guard';
 import { ShippingComponent } from './shipping/shipping.component';
 import { SignUpComponent } from './signup/signup.component';
+import { WishComponent } from './wish/wish.component';
 
 const routes: Routes = [
 
-  {path: '', component:SignUpComponent},
-  {path: 'home', component:HomeComponent}, //, canActivate:[AuthGuard]  
+  {path: 'signup', component:SignUpComponent},
+  {path: '', component:HomeComponent}, //, canActivate:[AuthGuard]  
   {path: 'cart', component:CartComponent},
   {path:'login', component:LoginComponent},
   {path: 'payment', component:PaymentComponent},
@@ -24,6 +25,7 @@ const routes: Routes = [
   {path: 'header', component:HeaderComponent},
   {path: 'footer', component:FooterComponent},
   {path: 'confirm', component:ConfirmComponent},
+  {path: 'wish', component:WishComponent},
 
 ];
 

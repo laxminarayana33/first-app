@@ -1,12 +1,36 @@
 .footer{
-  background-color: gainsboro;
+  /* background-color: black; */
+  background-image: url("assets/images/footerbg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-
-
+.menu-head{
+  color: white;
+    margin-top: 13px;
+    margin-left: 40px;
+}
 .menu-list{
   margin: 10px;
   list-style-type: none;
-  margin-left: 20%;
+  /* margin-left: 20%; */
+}
+.head{
+  text-align: center;
+}
+.contact{
+  color: white;
+    margin: 10px;
+}
+.contact-body{
+  margin: 7px;
+  margin-top: 20px;
+    line-height: 10px;
+    font-size: smaller;
+}
+.rcnt-head{
+  color: white;
+  margin-top: 10px;
+  margin-left:7px
 }
 .follow{
   margin-top:20px;
@@ -16,9 +40,9 @@
   padding: 7px;
 }
 .item-link{
-  text-decoration: none;
-  font-size: 20px;
-  color: blue;
+  text-decoration: underline;
+  font-size: 17px;
+  color: white;
 }
 .logo{
   margin:20px;
@@ -27,10 +51,15 @@
 .follow-list{
   display: flex;
   list-style-type: none;
-  margin: 20px;
-  margin-left: 11%;
+  justify-content: space-evenly;
+  /* margin: 20px;
+  margin-left: 11%; */
 
 }
 .f-list-item{
-  padding-left: 50px;
+  padding-left: 20px;
+}
+.log{
+  text-align: center;
+  margin: 20px;
 }

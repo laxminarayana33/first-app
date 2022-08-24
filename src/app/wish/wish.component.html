@@ -1,0 +1,36 @@
+<app-header></app-header>
+
+<div class="container-fluid">
+    <div class="row wish" *ngIf="wishes.length !== 0">
+        <div class="col-md-4" *ngFor = "let w of wishes">
+            <div class="card data" >
+                <button class="btn btn-danger close" (click)="close(w)">x</button>
+                <img class="data-img" src="{{w.imageUrl}}" alt="image">
+                <div class="card-body">
+                    <h6>Name: {{w.iname}}</h6>
+                    <p>Description: {{w.desc}}</p>
+                    <h6>Price: &#8377;{{w.price}}</h6>
+                    <button class="btn btn-warning" routerLink="/shipping">Buy Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="emptywish" *ngIf="wishes.length == 0">
+        <div class="row">
+            <div class="col-md-6"> 
+                <div class="wishimg">
+                <img src="assets/images/wishempty.jpg" alt="wish empty">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="wishtext">
+                   <h3> Your Wish List Empty</h3>
+                   <button class="btn btn-primary" routerLink="">Shop Now</button>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+<app-footer></app-footer>

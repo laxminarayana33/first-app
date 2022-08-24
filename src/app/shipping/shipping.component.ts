@@ -47,10 +47,13 @@ export class ShippingComponent implements OnInit {
     this.custdetails = false;
   }
   submitAddress(){
-    const addData = this.addressForm.value
-    console.log(addData);
+    this.http.post<any>('http://localhost:3000/address', this.addressForm.value).subscribe(res=>{
+      alert("signup sucessfull");
+    // const addData = this.addressForm.value
+    // console.log(addData);
     this.addressForm.reset();
     this.router.navigate(['checkout']);
+  })
   }
   inc(){
     this.quantity++;

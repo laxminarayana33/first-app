@@ -4,13 +4,22 @@
 <div class="container-fluid">
   <div class="body">
     <section>
+      <div class="bgimg">
+        <!-- <img src="assets/images/book.jpg" alt=""> -->
+        <div class="img-text">
+          <h4>A reader lives a thousand lives before he dies</h4>
+        <h4>The more that you read, the more things you will know.</h4>
+        <h6>Books are a uniquely portable magic.</h6>
+      </div>
+      </div>
         <div class="row main-row">
           <div class="col-md-4 main-col" *ngFor = "let item of itemsData  | filter: search:'iname'">
+            <div class="card">
             <div class="item-row">
-              <img [src]="item.imageUrl" alt="Book Image" style="cursor: pointer;" (click)="openModal(item)" >
+              <img [src]="item.imageUrl" alt="Book Image" class="img-style" (click)="openModal(item)" >
             </div>
             <div class="item-body">
-             <h3> {{item.iname}}</h3>
+             <h5> {{item.iname}}</h5>
              <h5> &#8377; {{item.price}} &nbsp;
               &nbsp;
             <i class="bi bi-heart-fill"  [style.fill]="isClicked? 'red' :'black' " (click)="wish(item)" >
@@ -20,15 +29,15 @@
               </i>
             </h5>
             <p>
-            <button class="btn incbtn btn-primary" (click)="inc(item)">+</button> &nbsp;
-            {{ item.quantity }} &nbsp;
-            <button class="btn incbtn btn-primary" (click)="dec(item)">-</button>
-          </p>
-             <!-- <p>{{item.desc}} </p> -->
-
-             <button class="btn btn-success" (click)="addItem(item)"> Add to Cart</button>
-             <button class="btn btn-danger" (click)="buyItem(item)"> Buy Now</button>
+            <button class="btn incbtn btn-primary" (click)="inc(item)">+</button> 
+            {{ item.quantity }}
+            <button class="btn incbtn btn-primary" (click)="dec(item)"> <strong>-</strong></button>
+            </p>
+             <p><button class="btn btn-success" (click)="addItem(item)"> Add to Cart</button>
+              <button class="btn btn-danger" (click)="buyItem(item)"> Buy Now</button> 
+            </p> 
             </div>
+          </div>
           </div>
         </div>
     </section>

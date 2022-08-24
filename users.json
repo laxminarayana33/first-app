@@ -34,5 +34,20 @@
       "confirmpassword": "",
       "id": 3
     }
+  ],
+  "address": [
+    {
+      "fullname": "nani",
+      "phonenumber": 9951665857,
+      "doorno": "14-106",
+      "street": "gandhinagar",
+      "city": "siddipet",
+      "state": "telangana",
+      "pincode": 502103,
+      "id": 1
+    }
+  ],
+  "wishes": [
+   
   ]
 }

@@ -20,8 +20,8 @@
                   <!-- <span *ngIf="form.passowrd.touched && !form.password.invalid"> Enter your password</span> -->
               </div>
       
-                  <button class="btn btn-primary" type="submit">Log In</button>
-                <p>Don't have account click here to <strong routerLink=""> Sign Up </strong></p>
+                  <button class="btn btn-primary" [disabled]="loginForm.invalid" type="submit">Log In</button>
+                <p>Don't have account click here to <strong routerLink="/signup"> Sign Up </strong></p>
             
             <!-- </div> -->
             </form>

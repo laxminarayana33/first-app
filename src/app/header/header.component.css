@@ -1,17 +1,19 @@
 .header{
-  background: aliceblue;
+  background: #a3d9e9;
+  background-image: url("/assets/images/header.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-
-
 .logo{
   text-align: center;
 }
 img{
-  width: 50%;
+  width: 35%;
   margin: 10px;
+  border-radius: 15px;
 }
 .search{
-  margin-top: 10%;
+  margin-top: 5%;
 }
 .menu_list{
   display: flex;
@@ -21,12 +23,20 @@ img{
 .list-items{
   list-style-type: none;
     text-decoration: none;
-    padding-left: 7%;
+    padding-left: 4%;
 }
 .list-link{
   text-decoration: none;
-  font-size: 25px;
+  font-size: 20px;
   color: #0b13b5;
+}
+.list-link:hover{
+ color: red;
+  border-radius: 20px;
+  opacity: 0.5;
+}
+.icon-bi{
+  margin-top: -5px;
 }
 
 .badge {

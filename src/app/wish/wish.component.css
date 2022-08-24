@@ -1,0 +1,19 @@
+.wishimg{
+    text-align: center;
+}
+.wishtext{
+    text-align: center;
+    margin-top: 25%;
+}
+.data{
+    margin: 20px;
+    align-items: center;
+}
+.data-img{
+    width: 50%;
+    margin: 10px;
+}
+.close{
+    margin-left: 87%;
+    margin-top: 2%;
+}

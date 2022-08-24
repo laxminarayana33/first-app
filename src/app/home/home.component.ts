@@ -1,6 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-// import { NgModel } from '@angular/forms';
+import { map } from 'rxjs';
+import { NgModel } from '@angular/forms';
 import itemData from '../data.json'
 import { CartService } from '../Services/cart.service';
 import { ServiceService } from '../Services/service.service';
@@ -14,12 +16,13 @@ import { ServiceService } from '../Services/service.service';
 export class HomeComponent {
 
   public itemsData: any;
+  public wishes:any;
   public items :any;
   public quantity:number = 1;
   // public showmodal:boolean = false;
   search:string ="";
   public modalData: any;
-  constructor( private service: ServiceService, private cartservice:CartService, private router:Router) {}
+  constructor( private service: ServiceService, private cartservice:CartService, private router:Router, private http:HttpClient) {}
 
  public totalItems:number=0;
   ngOnInit(){
@@ -29,6 +32,9 @@ export class HomeComponent {
       this.itemsData.forEach((i:any)=>{
         Object.assign(i, {quantity:1,total:i.price});
       })
+    });
+    this.cartservice.getWishItems().subscribe(res=>{
+      this.wishes = res;
     });
     this.cartservice.getItems().subscribe((res)=>{
       this.totalItems = res.length
@@ -68,8 +74,18 @@ export class HomeComponent {
   wish(item:any){
     this.isClicked = true;
     this.cartservice.wishItem(item);
-    console.log(item)
+    // this.http.post<any>('http://localhost:3000/wishes',this.cartservice.wishItem(item)).subscribe((res)=>{
+    //   const wish =res;
+    // });
     // alert('this is clicked')
+        // this.http.post<any>('http://localhost:3000/wishes', this.cartservice.wishItem(item)).subscribe(map((res)=>{
+    //   const wish = res;
+    //   console.log(wish)
+    // }))
+    // .subscribe(map((res)=>{
+    //   this.items =res;  
+    // console.log(item)
+    // }));
   }
   inc(item:any){
     if(item){
