@@ -1,9 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { map } from 'rxjs';
-import { NgModel } from '@angular/forms';
-import itemData from '../data.json'
+// import { map } from 'rxjs';
+// import { NgModel } from '@angular/forms';
+// import itemData from '../data.json'
 import { CartService } from '../Services/cart.service';
 import { ServiceService } from '../Services/service.service';
 
